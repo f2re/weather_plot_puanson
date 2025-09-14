@@ -1,0 +1,6 @@
+metpy>=1.0
+meteostat>=1.6
+cartopy>=0.21
+matplotlib>=3.5
+pandas>=1.4
+numpy>=1.21
