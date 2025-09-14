@@ -215,14 +215,14 @@ class WeatherMapPlotter:
             return
         
         # Преобразуем скорость и направление ветра в компоненты u, v
-        # Предполагаем, что скорость ветра в км/ч
+        # Скорость ветра в м/с
         try:
             # Преобразуем в обычные массивы numpy
             wind_speeds_np = np.array(wind_speeds, dtype=float)
             wind_dirs_np = np.array(wind_dirs, dtype=float)
             
             u_wind, v_wind = wind_components(
-                wind_speeds_np * units('km/h'), 
+                wind_speeds_np * units('m/s'), 
                 wind_dirs_np * units('degrees')
             )
             
@@ -235,10 +235,10 @@ class WeatherMapPlotter:
             )
             
             # Добавляем температуру (T) в северо-западной позиции (тёмно-красным цветом, жирный шрифт)
-            station_plot.plot_parameter('NW', temps, color='darkred', fontsize=10, weight='bold')
+            station_plot.plot_parameter('NW', temps, color='darkred', fontsize=8, weight='bold')
             
             # Добавляем точку росы (Td) в юго-западной позиции (тёмно-зелёным цветом, жирный шрифт)
-            station_plot.plot_parameter('SW', dew_points, color='darkgreen', fontsize=10, weight='bold')
+            station_plot.plot_parameter('SW', dew_points, color='darkgreen', fontsize=8, weight='bold')
             
             # Добавляем флаги ветра в центральной позиции с улучшенной толщиной линий
             # Преобразуем в узлы для стандартного отображения
@@ -252,7 +252,7 @@ class WeatherMapPlotter:
             station_plot.plot_text('E', station_ids_text, color='lightgray', fontsize=8)
             
             # Добавляем заголовок с улучшенным стилем
-            plt.title(f'Погодная карта за {dt.strftime("%Y-%m-%d %H:%M")}', fontsize=20, weight='bold')
+            plt.title(f'Погодная карта за {dt.strftime("%Y-%m-%d %H:%M")}', fontsize=16, weight='bold')
             
             # Сохраняем карту
             filename = f"{self.output_dir}/{dt.strftime('%Y-%m-%d_%H%M')}_weather_map.png"
