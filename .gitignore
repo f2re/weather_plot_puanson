@@ -149,3 +149,6 @@ maps/*.png
 
 # Generated files
 weather_map_panson.png
+
+# Large files
+*.zip
