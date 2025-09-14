@@ -1,130 +1,140 @@
-# 🌤️ Weather Map Plotting Module
+# 🌤️ Модуль построения погодных карт
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.12-blue.svg?style=flat-square&logo=python" alt="Python 3.12">
-  <img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="MIT License">
-  <img src="https://img.shields.io/badge/Build-Stable-brightgreen.svg?style=flat-square" alt="Build Status">
+  <img src="https://img.shields.io/badge/Лицензия-MIT-green.svg?style=flat-square" alt="Лицензия MIT">
+  <img src="https://img.shields.io/badge/Состояние-Стабильное-brightgreen.svg?style=flat-square" alt="Состояние сборки">
 </p>
 
-## 📊 Overview
+## 📊 Обзор
 
-This module creates professional weather maps in **panson format** for a specified region and time period. It fetches actual weather data from meteorological stations and generates visual representations with temperature, dew point, and wind information.
+Этот модуль создает профессиональные погодные карты в **формате пансонов** для заданного региона и временного периода. Он получает фактические данные о погоде с метеорологических станций и генерирует визуальные представления с температурой, точкой росы и информацией о ветре.
 
-The module implements all the requirements specified in the project documentation, including:
-- Creating 1500x1500px weather maps
-- Covering the region from lat 34, lon 110 (top-left) to lat 21, lon 120 (bottom-right)
-- Plotting weather parameters: T (temperature), Td (dew point), ff (wind speed), dd (wind direction)
-- Adding station identification numbers to the right of each weather symbol in light gray
-- Generating maps for dates at 3-day intervals
-- Storing maps in the `maps/` folder with appropriate naming
-- Exporting weather data to `weather.csv`
+Модуль реализует все требования, указанные в документации проекта, включая:
+- Создание погодных карт размером 1500x1500 пикселей
+- Покрытие региона от широты 34, долготы 110 (верхний левый угол) до широты 21, долготы 120 (нижний правый угол)
+- Отображение метеорологических параметров: T (температура), Td (точка росы), ff (скорость ветра), dd (направление ветра)
+- Добавление идентификационных номеров станций справа от каждого погодного символа светло-серым цветом
+- Генерация карт для дат с интервалом в 3 дня
+- Сохранение карт в папке `maps/` с соответствующими именами
+- Экспорт погодных данных в файл `weather.csv`
 
-## 🎯 Features
+## 🎯 Особенности
 
-| Feature | Description |
+| Функция | Описание |
 |--------|-------------|
-| 🌡️ **Temperature Mapping** | Displays temperature (T) in Northwest position with red color |
-| 💧 **Dew Point Mapping** | Shows dew point (Td) in Southwest position with green color |
-| 💨 **Wind Visualization** | Presents wind speed (ff) and direction (dd) as wind barbs in center |
-| 🏷️ **Station Identification** | Adds station IDs in light gray to the right of each symbol |
-| 📅 **Periodic Processing** | Generates maps for every 3rd day of the year |
-| 📁 **Organized Output** | Saves maps in `maps/` directory with timestamped filenames |
-| 📥 **Data Export** | Exports all weather data to `weather.csv` |
+| 🌡️ **Отображение температуры** | Отображает температуру (T) в северо-западной позиции красным цветом |
+| 💧 **Отображение точки росы** | Показывает точку росы (Td) в юго-западной позиции зеленым цветом |
+| 💨 **Визуализация ветра** | Представляет скорость (ff) и направление (dd) ветра в виде флагов в центре |
+| 🏷️ **Идентификация станций** | Добавляет идентификаторы станций светло-серым цветом справа от каждого символа |
+| 📅 **Периодическая обработка** | Генерирует карты для каждого третьего дня года |
+| 📁 **Организованный вывод** | Сохраняет карты в каталоге `maps/` с именами, содержащими метки времени |
+| 📥 **Экспорт данных** | Экспортирует все погодные данные в файл `weather.csv` |
 
-## 🖼️ Example Weather Map
+## 🖼️ Пример погодной карты
 
-![Example Weather Map](maps/2025-03-23_1200_weather_map.png)
+![Пример погодной карты](maps/2025-03-23_1200_weather_map.png)
 
-*Example of a generated weather map showing temperature, dew point, and wind data*
+*Пример сгенерированной погодной карты с отображением температуры, точки росы и данных о ветре*
 
-## ⚙️ Requirements
+## ⚙️ Требования
 
 - **Python 3.12**
-- Required Python packages:
-  - `metpy` - Meteorological calculations and plotting
-  - `meteostat` - Weather data fetching
-  - `cartopy` - Geospatial data processing
-  - `matplotlib` - Plotting library
-  - `pandas` - Data manipulation
-  - `numpy` - Numerical computing
+- Необходимые пакеты Python:
+  - `metpy` - Метеорологические расчеты и построение графиков
+  - `meteostat` - Получение погодных данных
+  - `cartopy` - Обработка геопространственных данных
+  - `matplotlib` - Библиотека построения графиков
+  - `pandas` - Манипуляции с данными
+  - `numpy` - Численные вычисления
 
-## 🚀 Installation
+## 🚀 Установка
 
 ```bash
-# Clone the repository
-git clone <repository-url>
+# Клонирование репозитория
+git clone <адрес-репозитория>
 cd weather_plot_puanson
 
-# Create virtual environment
+# Создание виртуального окружения
 python3.12 -m venv venv
 source venv/bin/activate
 
-# Install dependencies
+# Установка зависимостей
 pip install -r requirements.txt
 ```
 
-## ▶️ Usage
+## ▶️ Использование
 
 ```bash
-# Activate virtual environment
+# Активация виртуального окружения
 source venv/bin/activate
 
-# Run the module to generate weather maps for 2023 (testing)
+# Запуск модуля для генерации погодных карт за 2023 год (тестирование)
 python weather_map_plotter.py
 ```
 
-For production use with 2025 data, modify the script to use year 2025 instead of 2023.
+Для промышленного использования с данными за 2025 год измените скрипт, чтобы использовать 2025 год вместо 2023.
 
-## 🛠️ Configuration
+## 🛠️ Конфигурация
 
-The module is configured to create weather maps for the following region:
-- **Top-left corner**: Latitude 34, Longitude 110
-- **Bottom-right corner**: Latitude 21, Longitude 120
-- **Map size**: 1500x1500 pixels
-- **Data interval**: Every 3 days
-- **Display parameters**: T, Td, ff, dd
-- **Station IDs**: Displayed to the right of symbols in light gray
+Модуль настроен на создание погодных карт для следующего региона:
+- **Верхний левый угол**: Широта 34, Долгота 110
+- **Нижний правый угол**: Широта 21, Долгота 120
+- **Размер карты**: 1500x1500 пикселей
+- **Интервал данных**: Каждые 3 дня
+- **Отображаемые параметры**: T, Td, ff, dd
+- **Идентификаторы станций**: Отображаются справа от символов светло-серым цветом
 
-## 📁 Output Structure
+## 📁 Структура вывода
 
 ```
 weather_plot_puanson/
-├── maps/                          # Generated weather maps
+├── maps/                          # Сгенерированные погодные карты
 │   ├── 2025-01-01_0000_weather_map.png
 │   ├── 2025-01-01_1200_weather_map.png
 │   └── ...
-├── weather.csv                    # Exported weather data
-├── weather_map_plotter.py         # Main implementation
-└── api_get_data.py                # Data fetching utilities
+├── weather.csv                    # Экспортированные погодные данные
+├── weather_map_plotter.py         # Основная реализация
+└── api_get_data.py                # Утилиты получения данных
 ```
 
-## 📊 Data Format
+## 📊 Формат данных
 
-The weather data is exported in CSV format with the following columns:
-- **T**: Temperature (°C)
-- **Td**: Dew point temperature (°C)
-- **ff**: Wind speed (m/s)
-- **dd**: Wind direction (degrees)
-- **station_id**: Meteorological station identifier
-- **lat/lon**: Station coordinates
-- **name**: Station name
+Погодные данные экспортируются в формате CSV со следующими столбцами:
+- **T**: Температура (°C)
+- **Td**: Температура точки росы (°C)
+- **ff**: Скорость ветра (м/с)
+- **dd**: Направление ветра (градусы)
+- **station_id**: Идентификатор метеорологической станции
+- **lat/lon**: Координаты станции
+- **name**: Название станции
 
-## 👥 Author
+## 👥 Автор
 
-**F2re** - *Meteorological Data Visualization Specialist*
+**F2re** - *Специалист по визуализации метеорологических данных*
 
-## 📄 License
+## 📄 Лицензия
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Этот проект лицензирован по лицензии MIT - см. файл [LICENSE](LICENSE) для получения подробной информации.
 
-## 🤝 Contributing
+## 🤝 Вклад в проект
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a pull request
+1. Сделайте форк репозитория
+2. Создайте свою ветку функций (`git checkout -b feature/УдивительнаяФункция`)
+3. Зафиксируйте изменения (`git commit -m 'Добавить УдивительнуюФункцию'`)
+4. Отправьте изменения в ветку (`git push origin feature/УдивительнаяФункция`)
+5. Откройте пул-реквест
 
-## 🆘 Support
+## 🆘 Поддержка
 
-For questions, bug reports, or contributions, please refer to the project repository guidelines and contact the development team through established channels.
+По вопросам, сообщениям об ошибках или вкладам в проект, пожалуйста, обращайтесь к руководящим принципам репозитория проекта и свяжитесь с командой разработчиков через установленные каналы.
+
+# Документация
+
+Основная документация доступна на русском языке в каталоге [docs/ru/](docs/ru/).
+
+The main documentation is available in Russian in the [docs/ru/](docs/ru/) directory.
+
+Дополнительная документация на английском языке доступна в каталоге [docs/en/](docs/en/).
+
+Additional documentation in English is available in the [docs/en/](docs/en/) directory.
